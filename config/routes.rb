@@ -1,4 +1,6 @@
 MoodyOn::Application.routes.draw do
+  resources :moods
+
   authenticated :user do
     root :to => 'home#index'
   end
