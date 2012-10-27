@@ -12,7 +12,7 @@ class MoodPictureUploader < CarrierWave::Uploader::Base
 
   # Choose what kind of storage to use for this uploader:
   storage :file if Rails.env.development?
-  storage :fog if Rails.env.production?
+  #storage :fog if Rails.env.production?
   
 
   # Override the directory where uploaded files will be stored.
