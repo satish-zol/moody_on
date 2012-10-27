@@ -13,7 +13,7 @@
 	<% end %>
       </h3>
 	<% @moods.each do |mood| %>
-	  <%= link_to image_tag(mood.mood_picture, title: mood.name), url_for({:controller => "home", :action => "show_sub_moods", :id => mood.id }), :remote => true  %>
+	  <%= link_to image_tag(mood.mood_picture_url, title: mood.name, style: "background:gainsboro;"), {:action => 'show_sub_moods', :controller => 'home', :id => mood.id }, :remote => true %>
 	<% end %>
 	<% if current_user.has_role? :admin%>
 	  <ul class="nav nav-pills">
