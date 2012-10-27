@@ -9,6 +9,7 @@ end
 gem 'jquery-rails'
 gem 'carrierwave'
 gem 'rmagick'
+gem "fog", "~> 1.3.1"
 gem "rspec-rails", ">= 2.11.0", :group => [:development, :test]
 gem "email_spec", ">= 1.2.1", :group => :test
 gem "cucumber-rails", ">= 1.3.0", :group => :test, :require => false
