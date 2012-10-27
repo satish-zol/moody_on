@@ -1,10 +1,11 @@
-<%= simple_form_for(@mood, :html => {:multipart => true}) do |f| %>
+<%= simple_form_for(@sub_mood) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.association :mood %>
     <%= f.input :name %>
     <%= f.input :description %>
-    <%= f.input :mood_picture, :label => 'upload_picture', :required => true %>
+    <%= f.input :sub_mood_picture, :label => 'upload_picture', :required => true %>
   </div>
 
   <div class="form-actions">

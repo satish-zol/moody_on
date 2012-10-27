@@ -15,13 +15,13 @@
     <td><%= mood.name %></td>
     <td><%= mood.description %></td>
     <td><%= image_tag mood.mood_picture %></td>
-    <td><%= link_to 'Show', mood %></td>
-    <td><%= link_to 'Edit', edit_mood_path(mood) %></td>
-    <td><%= link_to 'Destroy', mood, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% if current_user.has_role? :admin %>
+    <td><%= link_to 'Show', mood, class: "btn btn-mini" %></td>
+    <td><%= link_to 'Edit', edit_mood_path(mood), class: "btn btn-mini" %></td>
+    <td><%= link_to 'Destroy', mood, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-mini" %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
-<br />
 
-<%= link_to 'New Mood', new_mood_path %>

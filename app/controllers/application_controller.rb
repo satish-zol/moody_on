@@ -6,6 +6,19 @@ class ApplicationController < ActionController::Base
   end
   
   
+ 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
@@ -15,10 +28,7 @@ class ApplicationController < ActionController::Base
   private
   
   def is_admin?
-    
-    if !current_user.has_role? :admin
-      redirect_to root_path
-    end
+    redirect_to root_path if !current_user.has_role? :admin
   end
 
 end
