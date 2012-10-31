@@ -5,7 +5,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.
   config.mailer_sender = "admin@moodyon.com"
-
+  config.omniauth :facebook, "215267491940472", "1da1c4b90dc21f68f776a2174b39d943", :scope => 'email, user_about_me, user_birthday, user_hometown, user_location, user_relationships, user_status, read_stream, offline_access, read_friendlists', :client_options => {:ssl => {:ca_path => '/etc/ssl/certs'}}
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"
 
@@ -206,7 +206,7 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
-
+    
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
