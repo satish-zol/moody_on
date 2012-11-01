@@ -14,25 +14,24 @@ class User < ActiveRecord::Base
  #for facebook integration with omniauth
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
-
     unless user
-      user = User.new(name:auth.extra.raw_info.name,
-                         provider:auth.provider,
-                         uid:auth.uid,
-                         email:auth.info.email,
-                         password:Devise.friendly_token[0,20],
-                         about_me:auth.extra.raw_info.bio,
-			  dob:auth.extra.raw_info.birthday,
-                         hometown:auth.extra.raw_info.hometown.name,
-                         location:auth.extra.raw_info.location.name,
-                         relationships:auth.extra.raw_info.relationship_status,
-                         gender:auth.extra.raw_info.gender,
-                         organisation:auth.extra.raw_info.work[0].employer.name,
-			  designation:auth.extra.raw_info.work[0].position.name,
-			  facebook_url:auth.info.urls.Facebook,
-			  educational_details:auth.extra.raw_info.education[1].school.name,
-                         facebook_image:auth.info.image
-                         )
+      user = User.new(name:auth.extra.raw_info.name.present? ? auth.extra.raw_info.name : "",
+                      provider:auth.provider.present? ? auth.provider : "",
+                      uid:auth.uid.present? ? auth.uid : "",
+                      email:auth.info.email,
+                      password:Devise.friendly_token[0,20],
+                      about_me:auth.extra.raw_info.bio.present? ? auth.extra.raw_info.bio : "",
+                      dob:auth.extra.raw_info.birthday.present? ? auth.extra.raw_info.birthday : "",
+                      hometown:auth.extra.raw_info.hometown.name.present? ? auth.extra.raw_info.hometown.name : "",
+                      location:auth.extra.raw_info.location.name.present? ? auth.extra.raw_info.location.name : "",
+                      relationships:auth.extra.raw_info.relationship_status.present? ? auth.extra.raw_info.relationship_status : "",
+                      gender:auth.extra.raw_info.gender.present? ? auth.extra.raw_info.gender : "",
+                      organisation:auth.extra.raw_info.work.present? ? auth.extra.raw_info.work[0].employer.name : "",
+                      designation:auth.extra.raw_info.work[0].position.name.present? ? auth.extra.raw_info.work[0].position.name : "",
+                      facebook_url:auth.info.urls.Facebook.present? ? auth.info.urls.Facebook : "" ,
+                      educational_details:auth.extra.raw_info.education.present? ? auth.extra.raw_info.education[1].school.name : "" ,
+                      facebook_image:auth.info.image.present? ? auth.info.image : ""
+                      )
       user.skip_confirmation!
       user.save!
     end
