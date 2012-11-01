@@ -17,7 +17,7 @@ gem "database_cleaner", ">= 0.9.1", :group => :test
 gem "launchy", ">= 2.1.2", :group => :test
 gem "capybara", ">= 1.1.2", :group => :test
 gem "factory_girl_rails", ">= 4.1.0", :group => [:development, :test]
-gem "twitter-bootstrap-rails", ">= 2.1.4", :group => :assets
+gem "twitter-bootstrap-rails", ">= 2.1.4"
 #gem "bootstrap-sass", ">= 2.1.0.0"
 gem "devise", ">= 2.1.2"
 gem "omniauth-facebook", "1.4.0"
