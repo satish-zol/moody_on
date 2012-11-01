@@ -81,6 +81,12 @@ ActiveRecord::Schema.define(:version => 20121031112956) do
     t.string   "relationships"
     t.string   "status"
     t.string   "gender"
+    t.string   "organisation"
+    t.string   "designation"
+    t.string   "profession"
+    t.string   "facebook_url"
+    t.string   "educational_details"
+    t.string   "facebook_image"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

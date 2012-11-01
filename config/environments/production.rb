@@ -75,8 +75,8 @@ MoodyOn::Application.configure do
     domain: "www.gmail.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: "devendrab@blueplanetinfosolutions.com",
-    password: "devendra@123"
+    user_name: "201.abhi@gmail.com",
+    password: "9423432387"
   }
 
 

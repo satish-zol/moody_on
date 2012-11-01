@@ -9,6 +9,11 @@ class AddColumnsToUsers < ActiveRecord::Migration
     add_column :users, :relationships, :string
     add_column :users, :status, :string
     add_column :users, :gender, :string
-    
+    add_column :users, :organisation, :string
+    add_column :users, :designation, :string
+    add_column :users, :profession, :string
+    add_column :users, :facebook_url, :string
+    add_column :users, :educational_details, :string
+    add_column :users, :facebook_image, :string
   end
 end
