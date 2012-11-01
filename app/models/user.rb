@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
                       relationships:auth.extra.raw_info.relationship_status.present? ? auth.extra.raw_info.relationship_status : "",
                       gender:auth.extra.raw_info.gender.present? ? auth.extra.raw_info.gender : "",
                       organisation:auth.extra.raw_info.work.present? ? auth.extra.raw_info.work[0].employer.name : "",
-                      designation:auth.extra.raw_info.work[0].position.name.present? ? auth.extra.raw_info.work[0].position.name : "",
+                      designation:auth.extra.raw_info.work.present? ? auth.extra.raw_info.work[0].position.name : "",
                       facebook_url:auth.info.urls.Facebook.present? ? auth.info.urls.Facebook : "" ,
                       educational_details:auth.extra.raw_info.education.present? ? auth.extra.raw_info.education[1].school.name : "" ,
                       facebook_image:auth.info.image.present? ? auth.info.image : ""
