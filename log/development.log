@@ -17697,3 +17697,69 @@ Processing by Devise::SessionsController#new as HTML
   Rendered layouts/_navigation.html.erb (3.2ms)
   Rendered layouts/_messages.html.erb (0.2ms)
 Completed 200 OK in 76ms (Views: 74.5ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2012-11-01 21:52:20 +0530
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`provider` = 'facebook' AND `users`.`uid` = '1432673801' LIMIT 1[0m
+Completed 500 Internal Server Error in 103369ms
+
+NoMethodError (undefined method `name' for nil:NilClass):
+  app/models/user.rb:31:in `find_for_facebook_oauth'
+  app/controllers/users/omniauth_callbacks_controller.rb:5:in `facebook'
+
+
+  Rendered /home/bpis/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+  Rendered /home/bpis/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /home/bpis/.rvm/gems/ruby-1.9.3-head/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-01 21:54:35 +0530
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-11-01 21:54:35 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (4.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (303.4ms)
+Compiled bootstrap_and_overrides.css  (981ms)  (pid 10699)
+Compiled events.css  (3ms)  (pid 10699)
+Compiled home.css  (3ms)  (pid 10699)
+Compiled moods.css  (3ms)  (pid 10699)
+Compiled reasons.css  (3ms)  (pid 10699)
+Compiled scaffolds.css  (2ms)  (pid 10699)
+Compiled sub_moods.css  (3ms)  (pid 10699)
+Compiled application.css  (1232ms)  (pid 10699)
+Compiled jquery.js  (5ms)  (pid 10699)
+Compiled jquery_ujs.js  (1ms)  (pid 10699)
+Compiled twitter/bootstrap/bootstrap-transition.js  (0ms)  (pid 10699)
+Compiled twitter/bootstrap/bootstrap-alert.js  (1ms)  (pid 10699)
+Compiled twitter/bootstrap/bootstrap-modal.js  (1ms)  (pid 10699)
+Compiled twitter/bootstrap/bootstrap-dropdown.js  (1ms)  (pid 10699)
+Compiled twitter/bootstrap/bootstrap-scrollspy.js  (1ms)  (pid 10699)
+Compiled twitter/bootstrap/bootstrap-tab.js  (1ms)  (pid 10699)
+Compiled twitter/bootstrap/bootstrap-tooltip.js  (1ms)  (pid 10699)
+Compiled twitter/bootstrap/bootstrap-popover.js  (1ms)  (pid 10699)
+Compiled twitter/bootstrap/bootstrap-button.js  (1ms)  (pid 10699)
+Compiled twitter/bootstrap/bootstrap-collapse.js  (1ms)  (pid 10699)
+Compiled twitter/bootstrap/bootstrap-carousel.js  (1ms)  (pid 10699)
+Compiled twitter/bootstrap/bootstrap-typeahead.js  (1ms)  (pid 10699)
+Compiled twitter/bootstrap/bootstrap-affix.js  (1ms)  (pid 10699)
+Compiled twitter/bootstrap.js  (275ms)  (pid 10699)
+Compiled bootstrap.js  (50ms)  (pid 10699)
+Compiled events.js  (1ms)  (pid 10699)
+Compiled home.js  (1ms)  (pid 10699)
+Compiled moods.js  (1ms)  (pid 10699)
+Compiled reasons.js  (1ms)  (pid 10699)
+Compiled sub_moods.js  (1ms)  (pid 10699)
+Compiled application.js  (518ms)  (pid 10699)
+  Rendered layouts/_navigation.html.erb (5.7ms)
+  Rendered layouts/_messages.html.erb (1.0ms)
+Completed 200 OK in 2409ms (Views: 2329.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2012-11-01 21:55:07 +0530
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`provider` = 'facebook' AND `users`.`uid` = '1432673801' LIMIT 1
