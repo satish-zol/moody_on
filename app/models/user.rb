@@ -14,7 +14,6 @@ class User < ActiveRecord::Base
  #for facebook integration with omniauth
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
-
     unless user
       user = User.new(name:auth.extra.raw_info.name.present? ? auth.extra.raw_info.name : "",
                       provider:auth.provider.present? ? auth.provider : "",
@@ -23,7 +22,7 @@ class User < ActiveRecord::Base
                       password:Devise.friendly_token[0,20],
                       about_me:auth.extra.raw_info.bio.present? ? auth.extra.raw_info.bio : "",
                       dob:auth.extra.raw_info.birthday.present? ? auth.extra.raw_info.birthday : "",
-                      hometown:auth.extra.raw_info.hometown.name.present? ? auth.extra.raw_info.hometown.name : "",
+                      hometown:auth.extra.raw_info.hometown.present? && auth.extra.raw_info.hometown.name.present? ? auth.extra.raw_info.hometown.name : "",
                       location:auth.extra.raw_info.location.present? && auth.extra.raw_info.location.name.present? ? auth.extra.raw_info.location.name : "",
                       relationships:auth.extra.raw_info.relationship_status.present? ? auth.extra.raw_info.relationship_status : "",
                       gender:auth.extra.raw_info.gender.present? ? auth.extra.raw_info.gender : "",
