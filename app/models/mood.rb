@@ -9,4 +9,8 @@ class Mood < ActiveRecord::Base
   
   validates :name, :presence => true
   validates_format_of :mood_picture, :with => %r{\.(png|jpg|jpeg|bmp)$}i, :message => "file format doesn't match"
+
+
+
+  
 end

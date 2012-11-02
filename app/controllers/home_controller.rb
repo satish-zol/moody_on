@@ -3,10 +3,7 @@ class HomeController < ApplicationController
     before_filter :is_admin?, :except =>  [:index, :show_sub_moods]
   
   def index
-    #@users = User.all
-    #debugger
     @moods = Mood.order 'name'
-    @sub_moods = SubMood.dep_sub_mood(params[:id])
   end
   
   def show_sub_moods
