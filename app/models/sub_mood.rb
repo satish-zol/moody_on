@@ -1,7 +1,10 @@
 class SubMood < ActiveRecord::Base
-  belongs_to :mood
+
   
   attr_accessible :description, :name, :sub_mood_picture, :mood_id
+  
+  belongs_to :mood
+  has_many :user_sub_moods
   
   mount_uploader :sub_mood_picture, MoodPictureUploader
   

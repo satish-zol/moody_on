@@ -20,4 +20,4 @@
 
 <br />
 
-<%= link_to 'New Event', new_event_path, current_user.has_role? :admin %>
+<%= link_to 'New Event', new_event_path if current_user.has_role? :admin %>

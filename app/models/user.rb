@@ -10,6 +10,10 @@ class User < ActiveRecord::Base
   attr_accessible :role_ids, :as => :admin
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :provider, :uid, :about_me, :dob, :hometown, :location, :relationships, :status, :gender, :organisation, :designation, :profession, :facebook_url, :educational_details, :facebook_image
   
+  has_one :profile
+  has_many :user_sub_moods
+  
+  after_create :create_user_profile
   
  #for facebook integration with omniauth
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
@@ -46,5 +50,15 @@ class User < ActiveRecord::Base
       end
     end
   end
+
+
+
+
+
+
+private
+  def create_user_profile
+    self.create_profile
+  end  
   
 end

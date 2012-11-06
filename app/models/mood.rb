@@ -1,8 +1,9 @@
 class Mood < ActiveRecord::Base
-  has_many :sub_moods, :dependent => :destroy
-  
+
   attr_accessible :description, :mood_picture, :name
   
+  has_many :sub_moods, :dependent => :destroy
+    
   mount_uploader :mood_picture, MoodPictureUploader
   
 
@@ -12,5 +13,8 @@ class Mood < ActiveRecord::Base
 
 
 
+  def self.ordered_mood
+    Mood.order 'name'
+  end
   
 end
