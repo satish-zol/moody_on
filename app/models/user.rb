@@ -51,6 +51,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  
+  def mood_by-city(city)
+    users = UserSubMood.joins(:sub_mood).joins(:user => :profile).where(:profiles => {:city => city})
+  end
 
 
 
